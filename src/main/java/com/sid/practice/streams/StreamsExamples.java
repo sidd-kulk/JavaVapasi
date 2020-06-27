@@ -1,18 +1,15 @@
 package com.sid.practice.streams;
 
-import org.apache.commons.collections4.CollectionUtils;
-import org.apache.commons.collections4.bag.CollectionBag;
+import com.google.common.collect.ImmutableList;
 
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
 public class StreamsExamples {
 
     public static String[] getDishNamesWithLowerCaloriesThan(int caloriesLimit, List<Dish> dishes) {
-        if (CollectionUtils.isEmpty(dishes)) {
-            dishes = List.of(
+        if (dishes == null || dishes.size() == 0) {
+            dishes = ImmutableList.of(
                     new Dish("Pasta", 1200, 34),
                     new Dish("Cake", 1000, 22),
                     new Dish("Salad", 120, 45),
