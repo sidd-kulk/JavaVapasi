@@ -1,6 +1,7 @@
 package com.sid.practice.streams;
 
 import com.google.common.collect.ImmutableList;
+import com.sid.practice.streams.models.Dish;
 
 import java.util.Comparator;
 import java.util.List;
@@ -19,25 +20,5 @@ public class StreamsExamples {
         return dishes.stream().filter( dish -> dish.getCalories() < caloriesLimit)
                               .sorted(Comparator.comparing(Dish::getCalories))
                               .map(Dish::getName).toArray(String[]::new);
-    }
-
-    private static class Dish {
-        private final String name;
-        private final int calories;
-        private final int price;
-
-        Dish(String name, int calories, int price){
-            this.name = name;
-            this.calories = calories;
-            this.price = price;
-        }
-
-        public int getCalories() {
-            return calories;
-        }
-
-        public String getName() {
-            return name;
-        }
     }
 }
