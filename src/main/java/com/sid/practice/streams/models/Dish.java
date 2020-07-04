@@ -1,5 +1,10 @@
 package com.sid.practice.streams.models;
 
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+
+@ToString
+@EqualsAndHashCode
 public class Dish {
     private final String name;
     private final int calories;
